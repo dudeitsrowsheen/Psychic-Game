@@ -1,22 +1,21 @@
-
-
-
-
-
-/* var computer answers: "whatever letter I pick?" */
-/* var computer options: ["a"-"z"] (like rps game) or ["zebra"] (word choices) or type all letters ("a", "b"...) */
 var wins = 0 
 var losses = 0
 var guessesLeft = 9
 var yourGuesses = []
-var answers = ["Bitches", "You Ugly", "fuck shit"];
+var answers = ["Bitches", "Bye Becky", "fuck shit", "cutie", "swear words", "Shaquima", "heyy you",];
 
+var winstext = document.getElementById("wins-text");
+var lossestext = document.getElementById("losses-text");
+var GuessesLeftText = document.getElementById("GuessesLeft-text");
+var YourGuessesSoFartext = document.getElementById("YourGuessesSoFar-text");
 
+winstext.innerText = wins;
+lossestext.innerText = losses;
+GuessesLeftText.innerText = guessesLeft;
+YourGuessesSoFartext.innerText = yourGuesses;
 
 
 var number = Math.floor(Math.random()*answers.length)
-
-
 
 
 var word = answers[number];
@@ -31,14 +30,16 @@ document.onkeyup = function(event) {
         var entry = event.key;
         guessesLeft --;
         if (guessesLeft <= 0){
-            console.log("you lose")
+            console.log("you a loser")
         }
 
         for(var i = 0; i < wordLetters.length; i++){
             if(entry === wordLetters[i]){
                 console.log("matched");
             }
+
         }
+        
         console.log(entry)
       };
 
